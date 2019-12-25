@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const model = require('../model');
 
 const sequelize = new Sequelize('sequelize' , 'root', '1234', {
-  host: 'http://localhost',
+  host: 'localhost',
   dialect: 'mysql',
   define: {
     timestamps: false
