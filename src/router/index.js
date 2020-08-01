@@ -6,9 +6,9 @@ module.exports = () => {
   const models = db.models;
 
   router.get('/list', async (ctx) => {
-
-  	const results = await models.boards.findAll().map(({ id, name, content, created_at}) => {
-      return { id, name, content, created_at };
+    
+  	const results = await models.boards.findAll().then(boardList => {
+      return boardList.map((board) => board);
     });
 
     ctx.body = {
